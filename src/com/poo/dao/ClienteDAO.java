@@ -14,7 +14,7 @@ public class ClienteDAO implements IDAO<Cliente> {
         Conexao c = new Conexao();
         String sql = "INSERT INTO TBCLIENTE (NOME, CPF, DATANASCIMENTO) VALUES (?, ?, ?)";
         PreparedStatement ps = c.getConexao().prepareStatement(sql);
-        ps.setString(1, cliente.getNome());
+        ps.setString(1, cliente.getNome() );
         ps.setString(2, cliente.getCpf());
         ps.setDate(3, new Date(cliente.getDataNascimento().getTime()));
         ps.execute();
